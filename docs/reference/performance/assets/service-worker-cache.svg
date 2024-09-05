@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 service-worker-cache.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:ev="http://www.w3.org/2001/xml-events"
+     width="5.51876in" height="3.67116in" viewBox="0 0 397.35 264.324" xml:space="preserve"
+     color-interpolation-filters="sRGB"
+     class="st10">
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#344f5d;stroke:#344f5d;stroke-width:0.75}
+		.st2 {fill:#feffff;font-family:Microsoft YaHei UI;font-size:0.833336em}
+		.st3 {marker-end:url(#mrkr4-9);stroke:#8699a2;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st4 {fill:#8699a2;fill-opacity:1;stroke:#8699a2;stroke-opacity:1;stroke-width:0.37313432835821}
+		.st5 {fill:#fcb738;stroke:#fcb738;stroke-width:0.75}
+		.st6 {font-size:1em}
+		.st7 {fill:#42b782;stroke:#42b782;stroke-width:0.25}
+		.st8 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:7.2}
+		.st9 {fill:#8699a2;font-family:Microsoft YaHei UI;font-size:0.833336em}
+		.st10 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+  <defs id="Markers">
+		<g id="lend4">
+			<path d="M 2 1 L 0 0 L 2 -1 L 2 1 " style="stroke:none"/>
+		</g>
+    <marker id="mrkr4-9" class="st4" refX="-5.36" orient="auto" markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(-2.68,-2.68) "/>
+		</marker>
+	</defs>
+  <g>
+		<title>页-1</title>
+    <g id="shape1-1" transform="translate(154.181,-223.325)">
+			<title>开始/结束</title>
+      <desc>用户发起资源请求</desc>
+      <path d="M20.12 264.32 L73.79 264.32 A20.1242 20.1242 -180 0 0 73.79 224.08 L20.12 224.08 A20.1242 20.1242 -180 1 0 20.12
+						 264.32 Z" class="st1"/>
+      <text x="6.96" y="247.2" class="st2">用户发起资源请求</text>
+    </g>
+    <g id="shape3-4" transform="translate(194.051,-223.325)">
+			<title>动态连接线</title>
+      <path d="M7.09 264.32 L7.09 306.59" class="st3"/>
+		</g>
+    <g id="shape2-10" transform="translate(140.094,-100.582)">
+			<title>判定</title>
+      <desc>资源是否存在于 Service Worker Cache</desc>
+      <path d="M0 228.11 L61.04 191.89 L122.09 228.11 L61.04 264.32 L0 228.11 Z" class="st5"/>
+      <text x="26.04" y="219.11" class="st2">资源是否存在于 <tspan x="24.99" dy="1.2em"
+                                                            class="st6">Service Worker </tspan>
+        <tspan
+            x="46.51" dy="1.2em" class="st6">Cache</tspan></text>
+    </g>
+    <g id="shape6-15" transform="translate(0.25,-0.25)">
+			<title>流程.6</title>
+      <desc>检索资源 Service Worker 将资源存入缓存</desc>
+      <rect x="0" y="203.951" width="93.913" height="60.3727" class="st7"/>
+      <text x="26.96" y="225.14" class="st2">检索资源 <tspan x="4.42" dy="1.2em" class="st6">Service Worker </tspan>将
+        <tspan
+            x="16.96" dy="1.2em" class="st6">资源存入缓存</tspan></text>
+    </g>
+    <g id="shape8-20" transform="translate(303.187,-0.25)">
+			<title>流程.8</title>
+      <desc>从 Service Worker Cache 获取资源</desc>
+      <rect x="0" y="203.951" width="93.913" height="60.3727" class="st7"/>
+      <text x="4.42" y="231.14" class="st2">从 Service Worker <tspan x="10.95" dy="1.2em" class="st6">Cache</tspan> 获取资源</text>		</g>
+    <g id="shape10-24" transform="translate(140.094,-136.798)">
+			<title>动态连接线.10</title>
+      <desc>否</desc>
+      <path d="M0 264.32 L-92.89 264.32 L-92.89 332.46" class="st3"/>
+      <rect x="-73.5315" y="258.324" width="10" height="12.0001" class="st8"/>
+      <text x="-73.53" y="267.32" class="st9">否</text>
+    </g>
+    <g id="shape11-31" transform="translate(262.181,-136.798)">
+			<title>动态连接线.11</title>
+      <desc>是</desc>
+      <path d="M0 264.32 L87.96 264.32 L87.96 332.46" class="st3"/>
+      <rect x="61.0692" y="258.324" width="10" height="12.0001" class="st8"/>
+      <text x="61.07" y="267.32" class="st9">是</text>
+    </g>
+	</g>
+</svg>
