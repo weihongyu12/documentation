@@ -33,7 +33,7 @@ title: 部署
   - 配置反向代理（Nuxt.js 项目专属）
 
 :::tip
-参见 [nginx 配置](/reference/configuration/#nginx)
+参见 [nginx 配置](/docs/reference/configuration/#nginx)
 :::
 
 ### Vue
@@ -51,7 +51,7 @@ title: 部署
   - 执行 `nginx -s reload` 重新加载 nginx 配置
 
 :::tip
-参见 [Docker#Vue](/reference/configuration/#vue)
+参见 [Docker#Vue](/docs/reference/configuration/#vue)
 :::
 
 ### Nuxt.js
@@ -68,7 +68,7 @@ title: 部署
   - 执行 `nginx -s reload` 重新加载 nginx 配置
 
 :::tip
-参见 [Docker#Nuxt.js](/reference/configuration/#nuxt-js)
+参见 [Docker#Nuxt.js](/docs/reference/configuration/#nuxt-js)
 :::
 
 ## 服务器架构推荐

@@ -70,7 +70,7 @@ HTTP 压缩应该基于以下条件：
 使用 [GZIP](https://www.gnu.org/software/gzip/) 作为 Brotli 的后备压缩支持。
 
 :::tip
-参见 [Brotli & GZIP 配置](/reference/configuration#brotli--gzip-配置)
+参见 [Brotli & GZIP 配置](/docs/reference/configuration#brotli--gzip-配置)
 :::
 
 :::warning
@@ -82,7 +82,7 @@ HTTP 压缩应该基于以下条件：
 HTTP/2 可以更快地为页面的资源提供服务，并且通过网络传输的数据更少。
 
 :::tip
-参见 [HTTP/2 配置](/reference/configuration#http2-配置)
+参见 [HTTP/2 配置](/docs/reference/configuration#http2-配置)
 :::
 
 #### 请求与响应复用
@@ -323,7 +323,7 @@ Imagemin 是图像压缩的绝佳选择，因为它支持多种图像格式，�
 [imagemin-webpack-plugin](https://github.com/Klathmon/imagemin-webpack-plugin) 是一个简单 Webpack 的插件，使用 Imagemin 压缩项目中的所有图像。
 
 :::tip
-参见 [Imagemin 图片压缩配置](/reference/configuration#imagemin-图片压缩配置)
+参见 [Imagemin 图片压缩配置](/docs/reference/configuration#imagemin-图片压缩配置)
 :::
 
 ### 用视频替换 GIF 动画，以加快页面加载速度
@@ -511,7 +511,7 @@ WebP是 JPEG，PNG 和 GIF 图像的理想替代品。另外，WebP 提供无损
 
 #### 将图像转换为 WebP
 
-通常使用[Imagemin WebP plugin](https://github.com/imagemin/imagemin-webp)插件自动将图像转换为 WebP。参见[参考配置](/reference/configuration/#imagemin-图片压缩配置)
+通常使用[Imagemin WebP plugin](https://github.com/imagemin/imagemin-webp)插件自动将图像转换为 WebP。参见[参考配置](/docs/reference/configuration/#imagemin-图片压缩配置)
 
 ```html
 <img src="picture.png?as=webp" alt="">
@@ -635,7 +635,7 @@ import(/* webpackPreload: true */ "CriticalChunk");
 如果使用的是旧版的 webpack，可使用第三方插件，例如 [preload-webpack-plugin](https://github.com/GoogleChromeLabs/preload-webpack-plugin)。
 
 :::tip
-参见 [Preload/Prefetch 配置](/reference/configuration#preloadprefetch-配置)
+参见 [Preload/Prefetch 配置](/docs/reference/configuration#preloadprefetch-配置)
 :::
 
 ### 通过代码拆分减少 JavaScript 负载

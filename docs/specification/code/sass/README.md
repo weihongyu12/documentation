@@ -12,7 +12,7 @@ stylelint 规则参考 `stylelint-config-twbs-bootstrap`，但是由于需要整
 ## 规则一览
 
 :::tip
-Sass 的 stylelint 规则继承于 [CSS 规则](/specification/code/css)
+Sass 的 stylelint 规则继承于 [CSS 规则](/docs/specification/code/css)
 :::
 
 | 规则                                                                                                                                                                                         | 来源                                  | 值                                     | 描述                                         | Autofixable |

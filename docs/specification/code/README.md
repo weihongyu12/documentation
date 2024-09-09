@@ -28,7 +28,7 @@ HTML 标签语义化是 Web 标准化的重要一环。也是标准定制时重�
 
 ### HTML Validate 规则参考
 
-在项目中会使用 `html-validate:recommended` 作为 HTML 代码检查，点击这里可以查看详细的 [HTML 规则](/specification/code/html)
+在项目中会使用 `html-validate:recommended` 作为 HTML 代码检查，点击这里可以查看详细的 [HTML 规则](/docs/specification/code/html)
 
 ## CSS
 
@@ -153,7 +153,7 @@ CSS 目前可以暂时参照 [此规范](https://codeguide.bootcss.com/#css)，�
 
 ### stylelint 规则参考
 
-在项目中会使用 `stylelint-config-twbs-bootstrap` 作为 CSS 代码检查，点击这里可以查看详细的 [CSS 规则](/specification/code/css)
+在项目中会使用 `stylelint-config-twbs-bootstrap` 作为 CSS 代码检查，点击这里可以查看详细的 [CSS 规则](/docs/specification/code/css)
 
 ## Sass
 
@@ -199,7 +199,7 @@ CSS 目前可以暂时参照 [此规范](https://codeguide.bootcss.com/#css)，�
 
 ### stylelint 规则参考
 
-在项目中会使用 `stylelint-config-twbs-bootstrap` 作为 Sass 代码检查，点击这里可以查看详细的 [Sass 规则](/specification/code/sass)
+在项目中会使用 `stylelint-config-twbs-bootstrap` 作为 Sass 代码检查，点击这里可以查看详细的 [Sass 规则](/docs/specification/code/sass)
 
 ## JavaScript
 
