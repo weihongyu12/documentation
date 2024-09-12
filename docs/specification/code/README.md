@@ -1,6 +1,5 @@
 ---
-lang: zh-cmn-Hans-CN
-title: 代码规范
+sidebar_position: 1
 ---
 
 # 代码规范

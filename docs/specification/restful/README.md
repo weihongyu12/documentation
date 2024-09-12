@@ -1,14 +1,22 @@
 ---
-lang: zh-cmn-Hans-CN
-title: RESTful API 规范
-description: RESTful API 规范
+sidebar_position: 5
+toc_min_heading_level: 2
+toc_max_heading_level: 5
 ---
 
 # RESTful API 规范
 
-服务端 API 推荐使用 OpenJDK 17 + [Spring Boot](https://spring.io/projects/spring-boot) 实现。
+:::note
+服务端 API 推荐使用以下语言和框架实现：
 
-[[toc]]
+- OpenJDK 17 + [Spring Boot](https://spring.io/projects/spring-boot)
+- Python + [Django](https://www.djangoproject.com/)
+- PHP + [Laravel](https://laravel.com/)
+:::
+
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline toc={toc} />
 
 ## 基础约定
 
@@ -23,7 +31,7 @@ description: RESTful API 规范
 API 应该与前端页面部署在不同的域名
 
 ```
-https://api.zydmall.com/
+https://api.example.com/
 ```
 
 #####  CORS 支持
@@ -946,7 +954,7 @@ Content-Type: multipart/form-data
 // 响应
 {
   "id": "ef7497affc2eedee5cb6fd58d8a86b310cc8d54a36c2569eb7c296e1af69efd5",
-  "url": "https://cdn.zydmall.com/upload/991b202e42d50c297d8785a40764e0df.pptx",
+  "url": "https://cdn.example.com/upload/991b202e42d50c297d8785a40764e0df.pptx",
   "name": "nginx安装和配置指南.pptx"
 }
 ```
@@ -965,12 +973,12 @@ Content-Type: multipart/form-data
 [
   {
     "id": "ef7497affc2eedee5cb6fd58d8a86b310cc8d54a36c2569eb7c296e1af69efd5",
-    "url": "https://cdn.zydmall.com/upload/991b202e42d50c297d8785a40764e0df.pptx",
+    "url": "https://cdn.example.com/upload/991b202e42d50c297d8785a40764e0df.pptx",
     "name": "nginx安装和配置指南.pptx"
   },
   {
     "id": "da0651efdbce6b3cc06b3fb509177e7ab5d4c1b0e93b7a4d72acaad0cdf16152",
-    "url": "https://cdn.zydmall.com/upload/9fb3f25df4cf34e8fefe17be2d44fddd.pptx",
+    "url": "https://cdn.example.com/upload/9fb3f25df4cf34e8fefe17be2d44fddd.pptx",
     "name": "前端入职培训.pptx"
   }
 ]
@@ -995,7 +1003,7 @@ Content-Type: multipart/form-data
 ```json
 {
   "name": "施耐德 iC65 微型断路器",
-  "fileUrl": "https://cdn.zydmall.com/files/bb313c99.png"
+  "fileUrl": "https://cdn.example.com/files/bb313c99.png"
 }
 ```
 
@@ -1035,7 +1043,7 @@ Content-Type: multipart/form-data
   "data": {
     "id": "6GLj047k6RqKAnR4Qyq2A",
     "name": "施耐德 iC65 微型断路器",
-    "avatar": "https://cdn.zydmall.com/files/bb313c99.png"
+    "avatar": "https://cdn.example.com/files/bb313c99.png"
   }
 }
 ```
@@ -1061,7 +1069,7 @@ Content-Type: multipart/form-data
   "data": {
     "id": "QPXw3DE7r8YaK2gxWm78e",
     "name": "施耐德 iC65 微型断路器",
-    "avatar": "https://cdn.zydmall.com/files/bb313c99.png"
+    "avatar": "https://cdn.example.com/files/bb313c99.png"
   }
 }
 ```
@@ -1073,7 +1081,7 @@ Content-Type: multipart/form-data
   "data": {
     "id": "QPXw3DE7r8YaK2gxWm78e",
     "name": "施耐德 iC65 微型断路器",
-    "avatar": "http://cdn.zydmall.com/files/bb313c99.png"
+    "avatar": "http://cdn.example.com/files/bb313c99.png"
   }
 }
 ```
@@ -1084,7 +1092,7 @@ Content-Type: multipart/form-data
 :::tip 正面例子 👍
 ```json
 {
-  "fileUrl": "https://cdn.zydmall.com/files/bb313c99.png"
+  "fileUrl": "https://cdn.example.com/files/bb313c99.png"
 }
 ```
 :::
@@ -1092,7 +1100,7 @@ Content-Type: multipart/form-data
 :::danger 反面例子 👎
 ```json
 {
-  "fileUrl": "https://cdn.zydmall.com/files/bb313c99.png?x-oss-process=style/s1"
+  "fileUrl": "https://cdn.example.com/files/bb313c99.png?x-oss-process=style/s1"
 }
 ```
 :::
@@ -1100,7 +1108,3 @@ Content-Type: multipart/form-data
 ## 文档
 
 文档推荐使用 [Spring REST Docs](https://spring.io/projects/spring-restdocs)
-
-## 附录
-
-### 界面元素 - JS 类型 - SQL 类型 映射

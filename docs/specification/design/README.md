@@ -1,7 +1,5 @@
 ---
-lang: zh-Hans
-title: UI设计规范
-description: 页面的描述
+sidebar_position: 8
 ---
 
 :::danger

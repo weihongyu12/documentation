@@ -1,7 +1,5 @@
 ---
-lang: zh-cmn-Hans-CN
-title: 目录规范
-description: 项目目录规范
+sidebar_position: 3
 ---
 
 # 目录规范

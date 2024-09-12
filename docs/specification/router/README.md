@@ -1,7 +1,5 @@
 ---
-lang: zh-cmn-Hans-CN
-title: 路由规范
-description: 项目路由规范
+sidebar_position: 4
 ---
 
 # 路由规范

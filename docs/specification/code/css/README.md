@@ -1,9 +1,8 @@
 ---
-lang: zh-cmn-Hans-CN
-title: CSS规则
+sidebar_position: 2
 ---
 
-# stylelint 规则参考
+# CSS 规范
 
 :::warning
 stylelint 规则参考 `stylelint-config-twbs-bootstrap`，但是由于需要整理的内容非常多，在开发过程中，仍以实际的 stylelint 检查为准。本章内容仅供参考

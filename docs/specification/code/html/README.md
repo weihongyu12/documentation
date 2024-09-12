@@ -1,10 +1,9 @@
 ---
-lang: zh-cmn-Hans-CN
-title: HTML 规则
+sidebar_position: 1
 ---
 
 
-# HTML Validate 规则参考
+# HTML 规范
 
 :::warning
 HTML Validate 规则参考 `html-validate:recommended`，但是由于需要整理的内容非常多，在开发过程中，仍以实际的 HTML Validate 检查为准。本章内容仅供参考
