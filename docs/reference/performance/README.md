@@ -1,10 +1,14 @@
 ---
 sidebar_position: 1
+toc_min_heading_level: 2
+toc_max_heading_level: 5
 ---
 
 # 性能优化
 
-[[toc]]
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline toc={toc} />
 
 ## 服务器
 
@@ -22,7 +26,7 @@ HTTP 缓存的优先级如下：
 
 Service Worker Cache 实际上是 [Service Worker](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API) 和 [CacheStorage API](https://developer.mozilla.org/zh-CN/docs/Web/API/CacheStorage) 两项技术。Service Worker 允许用户拦截网络请求，并通过 CacheStorage API 有条件的将项目存储在一个特殊的缓存中。此缓存与浏览器的本地缓存分开，使用它即可在用户出于弱网络（甚至离线）时，从 CacheStorage 缓存向用户提供内容。还可以使用这个特殊时期的缓存提高渲染性能。
 
-![Service Worker Cache](performance/assets/service-worker-cache.svg)
+![Service Worker Cache](assets/service-worker-cache.svg)
 
 :::tip
 Service Worker Cache 实际上是 PWA 的一个功能，有一个库 [Workbox](https://developers.google.com/web/tools/workbox) 可以实现此功能。在 Vue 项目中可以使用 [PWA 插件](https://cli.vuejs.org/zh/config/#pwa) 来开启 Workbox。
@@ -30,7 +34,7 @@ Service Worker Cache 实际上是 PWA 的一个功能，有一个库 [Workbox](h
 
 #### HTTP Cache
 
-![HTTP Cache](performance/assets/http-cache.svg)
+![HTTP Cache](assets/http-cache.svg)
 
 ##### Cache-Control
 
@@ -169,7 +173,7 @@ CDN 由服务器网络组成，这些服务器网络经过优化，可快速将�
 
 CDN 可以将资源基于地理位置提供给临近的用户，以此提升性能。
 
-![有无CDN的连接设置比较](performance/assets/cdn.png?as=webp)
+![有无CDN的连接设置比较](assets/cdn.png?as=webp)
 
 :::tip
 参见[阿里云 CDN 文档](https://www.alibabacloud.com/help/zh/product/27099.html)
@@ -243,7 +247,7 @@ CDN 可以将资源基于地理位置提供给临近的用户，以此提升性�
 <link rel="preconnect" href="https://example.com">
 ```
 
-![preconnect](performance/assets/preconnect.png?as=webp)
+![preconnect](assets/preconnect.png?as=webp)
 
 通过与重要的第三方来源建立早期连接，可以将加载时间缩短100–500 ms。 这些数字看似很小，但它们在用户对网页性能的感知方式上却有所不同。
 
@@ -292,7 +296,7 @@ DNS解析的启动类似于预连接：通过在文档的 `<head>` 中添加 `<l
 <link rel="prefetch" href="style.css" as="style">
 ```
 
-![prefetch](performance/assets/prefetch.png?as=webp)
+![prefetch](assets/prefetch.png?as=webp)
 
 预取提示会消耗不立即需要的资源额外的字节，因此需要谨慎地应用此技术。仅在确信用户将需要资源时才预取资源。当用户的连接速度较慢时，请考虑不预取。可以使用 [Network Information API](https://developer.mozilla.org/zh-CN/docs/Web/API/NetworkInformation) 进行检测。
 
@@ -555,7 +559,7 @@ import picture from './picture.png?as=webp'
 
 与构建脚本相比，CDN 通常更适合于为每个单独的客户端创建大量定制的图像。
 
-![图像CDN格式](performance/assets/image-cdn-url.jpg?as=webp)
+![图像CDN格式](assets/image-cdn-url.jpg?as=webp)
 
 :::tip
 阿里云 CDN 提供[图像处理](https://help.aliyun.com/document_detail/193591.html)功能，可以简化图片[格式转化](https://help.aliyun.com/document_detail/193593.html)、[压缩](https://help.aliyun.com/document_detail/193595.html)、[裁剪](https://help.aliyun.com/document_detail/193596.html)、[缩放](https://help.aliyun.com/document_detail/193598.html)、[旋转](https://help.aliyun.com/document_detail/193599.html)、[添加水印](https://help.aliyun.com/document_detail/193601.html)等操作
@@ -964,13 +968,13 @@ body {
 
 具有 `async` 属性的脚本在完成下载后和窗口[加载](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/load_event)事件之前第一时间执行。这意味着 `async` 脚本可能（并且很可能）不会按照它们在 HTML 中出现的顺序执行。这也意味着如果他们在解析器仍在工作时完成下载，他们可以中断 DOM 构建。
 
-![async加载过程](performance/assets/async-defer.png?as=webp)
+![async加载过程](assets/async-defer.png?as=webp)
 
 ###### `defer`
 
 具有 `defer` 属性的脚本在 HTML 解析完全完成之后，但在 [`DOMContentLoaded`](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/DOMContentLoaded_event) 事件之前执行。`defer` 保证脚本将按照它们在 HTML 中出现的顺序执行并且不会阻塞解析器。
 
-![defer加载过程](performance/assets/defer-script.png?as=webp)
+![defer加载过程](assets/defer-script.png?as=webp)
 
 ##### 建立与所需来源的早期连接
 

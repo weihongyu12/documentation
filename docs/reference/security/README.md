@@ -1,10 +1,14 @@
 ---
 sidebar_position: 3
+toc_min_heading_level: 2
+toc_max_heading_level: 5
 ---
 
 # 安全
 
-[[toc]]
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline toc={toc} />
 
 ## 安全 Headers 快速参考
 
@@ -323,7 +327,7 @@ Content-Security-Policy:
   base-uri 'none';
 ```
 
-![基于 nonce 的严格 CSP](security/assets/nonce-based-strict-csp.png?as=webp)
+![基于 nonce 的严格 CSP](assets/nonce-based-strict-csp.png?as=webp)
 
 - **基于哈希的严格 CSP**
 

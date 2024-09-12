@@ -1056,6 +1056,7 @@ EXPOSE 80
 ```
 
 :::details 最完整配置（包括 Brotli 和 ModSecurity）
+
 ```dockerfile
 # Dockerfile
 
@@ -1065,7 +1066,7 @@ ARG NGINX_VERSION="1.20.2"
 # 安装依赖和构建
 FROM node:16 AS build
 WORKDIR /app
-COPY . /app
+COPY .. /app
 RUN yarn install --frozen-lock
 RUN yarn build
 
