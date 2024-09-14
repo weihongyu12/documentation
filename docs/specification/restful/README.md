@@ -38,7 +38,7 @@ https://api.example.com/
 
 服务端 API 与前端页面在不同域名时，应该使用 [CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS) 避免跨域。
 
-::::details
+::::note
 跨域资源共享(CORS) 是一种机制，它使用额外的 HTTP 头来告诉浏览器  让运行在一个 origin (domain) 上的 Web 应用被准许访问来自不同源服务器上的指定的资源。当一个资源从与该资源本身所在的服务器不同的域、协议或端口请求一个资源时，资源会发起一个跨域 HTTP 请求。
 
 出于安全原因，浏览器限制从脚本内发起的跨源 HTTP 请求。 例如，XMLHttpRequest 和 Fetch API 遵循同源策略。 这意味着使用这些 API 的 Web 应用程序只能从加载应用程序的同一个域请求 HTTP 资源，除非响应报文包含了正确CORS响应头。
@@ -357,7 +357,7 @@ GwW0bZAzm2qQE1wDKqope
 ```
 :::
 
-:::details
+:::note
 - [Accept](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept)
 - [Content-Type](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Type)
 
