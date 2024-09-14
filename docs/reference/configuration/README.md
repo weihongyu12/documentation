@@ -211,8 +211,8 @@ module.exports = defineConfig({
 可参考 [HTML5 Boilerplate nginx 配置](https://github.com/h5bp/server-configs-nginx)
 :::
 
-:::details 完整版 nginx.conf 配置
-```
+:::note 完整版 nginx.conf 配置
+```nginx
 # For more information on configuration, see:
 #   * Official English Documentation: http://nginx.org/en/docs/
 #   * Official Russian Documentation: http://nginx.org/ru/docs/
@@ -1042,7 +1042,7 @@ module.exports = {
 # Dockerfile
 
 # 安装依赖和构建
-FROM node:16 AS build
+FROM node:lts AS build
 WORKDIR /app
 COPY configuration /app
 RUN npm install
@@ -1055,7 +1055,7 @@ COPY --from=build /app/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
 ```
 
-:::details 最完整配置（包括 Brotli 和 ModSecurity）
+:::note 最完整配置（包括 Brotli 和 ModSecurity）
 
 ```dockerfile
 # Dockerfile
@@ -1064,7 +1064,7 @@ EXPOSE 80
 ARG NGINX_VERSION="1.20.2"
 
 # 安装依赖和构建
-FROM node:16 AS build
+FROM node:lts AS build
 WORKDIR /app
 COPY .. /app
 RUN yarn install --frozen-lock
@@ -1202,7 +1202,7 @@ EXPOSE 80
 # Dockerfile
 
 # 安装依赖和启动
-FROM node:16 AS build
+FROM node:lts AS build
 WORKDIR /app
 COPY . /app
 RUN npm install
