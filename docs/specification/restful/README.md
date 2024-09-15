@@ -270,7 +270,7 @@ UserKey: param:key:loginInfo:zyd0214999218:WECHAT:b46bf79b
 
 不要直接使用自增 ID，这会导致爬虫泛滥，并容易泄漏数据量，直接使用自增 ID 还容易引起暴力破解的风险。
 
-推荐对自增 ID 进行 Hash（例如 YouTube 和 bilibili），可以隐藏真实的业务 ID，从而增加了攻击成本。建议参考 [Hashids](https://hashids.org/)。
+推荐对自增 ID 进行 Hash（例如 YouTube 和 bilibili），可以隐藏真实的业务 ID，从而增加了攻击成本。建议参考 [Sqids](https://sqids.org/)。
 
 :::tip 正面例子 👍
 ```json
