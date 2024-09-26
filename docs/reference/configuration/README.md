@@ -41,84 +41,95 @@ import TOCInline from '@theme/TOCInline';
 }
 ```
 
-## Vue & Webpack
+## Webpack
 
 :::tip
-- [https://next.cli.vuejs.org/zh/config/](https://next.cli.vuejs.org/zh/config/)
 - [https://webpack.js.org/configuration/](https://webpack.js.org/configuration/)
 :::
 
 ### Preload/Prefetch 配置
 
-(TODO)
+```js
+// webpack.config.js
+
+// $ npm install @vue/preload-webpack-plugin --save-dev
+const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
+
+module.exports = {
+  plugins: [
+    // 启用preload
+    new PreloadWebpackPlugin({
+      rel: 'preload',
+      include: 'initial',
+      fileBlacklist: [
+        /\.map$/,
+        /hot-update\.js$/,
+      ],
+    }),
+    // 启用prefetch
+    new PreloadWebpackPlugin({
+      rel: 'prefetch',
+      include: 'asyncChunks'
+    }),
+  ],
+};
+```
 
 ### Brotli & Gzip 预压缩配置
 
 ```js
-// vue.config.js
+// webpack.config.js
 
-const { defineConfig } = require('@vue/cli-service');
 // $ npm install compression-webpack-plugin --save-dev
 const CompressionPlugin = require('compression-webpack-plugin');
 
-module.exports = defineConfig({
-  configureWebpack: (config) => {
-    const basePlugins = [];
-    let productionPlugins = [];
-
-    if (process.env.NODE_ENV === 'production') {
-      productionPlugins = [
-        // brotli 预压缩
-        new CompressionPlugin({
-          filename: '[path][base].br[query]',
-          algorithm: 'brotliCompress',
-          test: /\.(html|js|css|svg|ico|xml|json|wasm|eot|otf|ttf|bmp|md)$/,
-          compressionOptions: { level: 11 },
-          threshold: 10240,
-          minRatio: 0.8,
-        }),
-        // gzip 预压缩
-        new CompressionPlugin({
-          filename: '[path][base].gz[query]',
-          algorithm: 'gzip',
-          test: /\.(html|js|css|svg|ico|xml|json|wasm|eot|otf|ttf|bmp|md)$/,
-          compressionOptions: { level: 9 },
-          threshold: 10240,
-          minRatio: 0.8,
-        }),
-      ];
-    }
-
-    return {
-      plugins: [
-        ...basePlugins,
-        ...productionPlugins,
-      ],
-    };
-  },
-});
+module.exports = {
+  plugins: [
+    // brotli 预压缩
+    new CompressionPlugin({
+      filename: '[path][base].br[query]',
+      algorithm: 'brotliCompress',
+      test: /\.(html|js|css|svg|ico|xml|json|wasm|eot|otf|ttf|bmp|md)$/,
+      compressionOptions: { level: 11 },
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
+    // gzip 预压缩
+    new CompressionPlugin({
+      filename: '[path][base].gz[query]',
+      algorithm: 'gzip',
+      test: /\.(html|js|css|svg|ico|xml|json|wasm|eot|otf|ttf|bmp|md)$/,
+      compressionOptions: { level: 9 },
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
+  ],
+};
 ```
 
 ### Crossorigin & SRI 配置
 
 ```js
-// vue.config.js
+// webpack.config.js
 
-const { defineConfig } = require('@vue/cli-service');
+// $ npm install webpack-subresource-integrity --save-dev
+const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 
-module.exports = defineConfig({
-  crossorigin: 'anonymous',
-  integrity: true,
-});
+module.exports = {
+  plugins: [
+    new SubresourceIntegrityPlugin({
+      hashFuncNames: ['sha384'],
+    }),
+  ],
+};
 ```
 
 ### Imagemin 图片压缩配置
 
 ```js
-// vue.config.js
+// webpack.config.js
 
-const { defineConfig } = require('@vue/cli-service');
-// npm install image-minimizer-webpack-plugin imagemin --save-dev
+// npm install image-minimizer-webpack-plugin imagemin sharp --save-dev
 //
 // 无损压缩（推荐）：
 // npm install imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-svgo --save-dev
@@ -130,69 +141,74 @@ const { defineConfig } = require('@vue/cli-service');
 // npm install imagemin-webp --save-dev
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
-module.exports = defineConfig({
-  configureWebpack: (config) => {
-    return {
-      optimization: {
-        minimizer: [
-          new ImageMinimizerPlugin({
-            minimizer: {
-              implementation: ImageMinimizerPlugin.imageminMinify,
-              options: {
-                // 使用自定义选项进行无损压缩优化
-                plugins: [
-                  ['gifsicle', { optimizationLevel: 3, interlaced: true }],
-                  ['jpegtran', { progressive: true }],
-                  ['optipng', { optimizationLevel: 7 }],
-                  // Svgo configuration here https://github.com/svg/svgo#configuration
-                  [
-                    'svgo',
+module.exports = {
+  optimization: {
+    minimizer: [
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            // 使用自定义选项进行无损压缩优化
+            plugins: [
+              ['gifsicle', { optimizationLevel: 3, interlaced: true }],
+              ['jpegtran', { progressive: true }],
+              ['optipng', { optimizationLevel: 7 }],
+              // Svgo configuration here https://github.com/svg/svgo#configuration
+              [
+                'svgo',
+                {
+                  plugins: [
                     {
-                      plugins: [
-                        {
-                          name: 'preset-default',
-                          params: {
-                            overrides: {
-                              removeViewBox: false,
-                              addAttributesToSVGElement: {
-                                params: {
-                                  attributes: [
-                                    { xmlns: 'http://www.w3.org/2000/svg' },
-                                  ],
-                                },
-                              },
+                      name: 'preset-default',
+                      params: {
+                        overrides: {
+                          removeViewBox: false,
+                          addAttributesToSVGElement: {
+                            params: {
+                              attributes: [
+                                { xmlns: 'http://www.w3.org/2000/svg' },
+                              ],
                             },
                           },
                         },
-                      ],
+                      },
                     },
                   ],
-                ],
+                },
+              ],
+            ],
+          },
+        },
+        generator: [
+          {
+            // 可以使用“?as=webp”生成器，生成 WebP 图片格式
+            preset: 'webp',
+            implementation: ImageMinimizerPlugin.imageminGenerate,
+            options: {
+              plugins: [['imagemin-webp', { quality: 100, lossless: true }]],
+            },
+          },
+          {
+            // 可以使用“?as=avif”生成器，生成 WebP 图片格式
+            preset: 'avif',
+            implementation: ImageMinimizerPlugin.sharpGenerate,
+            options: {
+              encodeOptions: {
+                avif: { lossless: false },
               },
             },
-            generator: [
-              {
-                // 可以使用“?as=webp”生成器，生成 WebP 图片格式
-                preset: 'webp',
-                implementation: ImageMinimizerPlugin.imageminGenerate,
-                options: {
-                  plugins: [['imagemin-webp', { quality: 100, lossless: true }]],
-                },
-              },
-            ],
-          }),
+          },
         ],
-      },
-    };
+      }),
+    ],
   },
-});
+};
 ```
 
 ## Babel
 
 :::tip
 - [https://babeljs.io/docs/en/config-files](https://babeljs.io/docs/en/config-files)
-- [https://next.cli.vuejs.org/zh/config/#transpiledependencies](https://next.cli.vuejs.org/zh/config/#transpiledependencies)
 :::
 
 ```js
