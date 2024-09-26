@@ -19,7 +19,7 @@ description: 架构指南和总览
 | 路由            | -                | Vue Router       | Vue Router       |
 | 路由模式          | history          | hash             | hash             |
 | 状态管理          | -                | Pinia            | Pinia            |
-| TypeScript    | ☑️可选             | ☑️可选             | ☑️可选             |
+| TypeScript    | ✔️               | ✔️               | ✔️               |
 | ESLint        | airbnb           | airbnb           | airbnb           |
 |               | vue3/recommended | vue3/recommended | vue3/recommended |
 |               | nuxt/recommended |                  |                  |
@@ -37,10 +37,6 @@ description: 架构指南和总览
 - 严格的代码检查工具，提升代码维护性：包括 ESLint、stylelint 和 HTML Validate
 - 使用 PWA 为用户提供更好的用户体验
 - 使用 Webpack 5 为项目提供最佳构建支持
-
-:::warning
-截止本文撰写时，Nuxt 3、Vuetify 3 还不是正式版本，请不要用于生产环境！
-:::
 
 ## 技术运用
 
@@ -65,7 +61,7 @@ description: 架构指南和总览
 
 | 特性   | 框架                                              | 说明                         |
 |------|-------------------------------------------------|----------------------------|
-| 框架   | [Vue](https://v3.cn.vuejs.org/)                 |                            |
+| 框架   | [Vue](https://cn.vuejs.org/)                    |                            |
 | 路由   | [Vue Router](https://next.router.vuejs.org/zh/) | 为 Vue 提供页面切换功能             |
 | 状态管理 | [Pinia](https://pinia.vuejs.org/)               | 为多个 Vue 组件提供共享的状态          |
 | 脚手架  | [Vue CLI](https://next.cli.vuejs.org/zh/)       | 生成一个 Vue 项目，项目开发可能需要参考配置文档 |
